@@ -117,6 +117,7 @@ describe("mailcheck", function() {
         expect(mailcheck.suggest('test@GNAIL.con', domains).domain).toEqual('gmail.com');
         expect(mailcheck.suggest('test@#gmail.com', domains).domain).toEqual('gmail.com');
         expect(mailcheck.suggest('test@comcast.nry', domains).domain).toEqual('comcast.net');
+        expect(mailcheck.suggest('test@gmail.fr', domains).domain).toEqual('gmail.com');
 
         expect(mailcheck.suggest('test@homail.con', domains, secondLevelDomains, topLevelDomains).domain).toEqual('hotmail.com');
         expect(mailcheck.suggest('test@hotmail.co', domains, secondLevelDomains, topLevelDomains).domain).toEqual('hotmail.com');
